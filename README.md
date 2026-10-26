@@ -17,7 +17,7 @@ shadcn/ui (`button`, `dialog`, `input`, `label`, `card`).
 - shadcn/ui (estilo "new-york")
 
 ## Cómo correrlo en local
-
+ 
 ```bash
 npm install
 npm run dev
