@@ -1,0 +1,101 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-fraunces), Georgia, serif;
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Paleta de marca ESSERE, tomada de los archivos de logo provistos.
+     Los tres colores son parte de la identidad del centro. */
+  --color-essere-blue: var(--essere-blue);
+  --color-essere-blue-deep: var(--essere-blue-deep);
+  --color-essere-orange: var(--essere-orange);
+  --color-essere-violet: var(--essere-violet);
+  --color-essere-navy: var(--essere-navy);
+  --color-essere-navy-foreground: var(--essere-navy-foreground);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.85rem;
+
+  /* Base: crema cálido, coherente con un centro de salud y bienestar */
+  --background: #faf7f1;
+  --foreground: #16293a;
+
+  --card: #ffffff;
+  --card-foreground: #16293a;
+  --popover: #ffffff;
+  --popover-foreground: #16293a;
+
+  /* Celeste del isotipo: color primario de marca (CTAs, links, foco) */
+  --primary: #25a9e0;
+  --primary-foreground: #ffffff;
+
+  /* Violeta del wordmark: acento secundario (tags, detalles, sección) */
+  --secondary: #866ba9;
+  --secondary-foreground: #ffffff;
+
+  --muted: #efe9de;
+  --muted-foreground: #5c6b74;
+
+  /* Naranja del isotipo: acento de alto contraste (bullets, destacados) */
+  --accent: #ff8b3d;
+  --accent-foreground: #16293a;
+
+  --destructive: #d9483c;
+
+  --border: #e2dccf;
+  --input: #e2dccf;
+  --ring: #25a9e0;
+
+  /* Sección oscura (equivalente al bloque "Muchas miradas" del mock) */
+  --essere-navy: #122339;
+  --essere-navy-foreground: #f5f1e8;
+
+  --essere-blue: #25a9e0;
+  --essere-blue-deep: #5c96ba;
+  --essere-orange: #ff8b3d;
+  --essere-violet: #866ba9;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  ::selection {
+    background-color: var(--essere-blue);
+    color: #ffffff;
+  }
+}
